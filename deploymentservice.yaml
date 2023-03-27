@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: nodeapp-deployment
   labels:
-    app: myapp
+    app: nodeapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: myapp
+      app: nodeapp
   template:
     metadata:
       labels:
-        app: myapp 
+        app: nodeapp 
     spec:
       containers:
       - name: nodeserver
@@ -29,7 +29,7 @@ metadata:
   name: nodeapp-service
 spec:
   selector:
-    app: myapp 
+    app: nodeapp 
   type: NodePort
   ports:
   - protocol: TCP
