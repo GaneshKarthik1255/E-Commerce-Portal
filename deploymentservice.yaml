@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: nodeapp 
+        app: nodeapp
     spec:
       containers:
       - name: nodeserver
@@ -29,10 +29,9 @@ metadata:
   name: nodeapp-service
 spec:
   selector:
-    app: nodeapp 
+    app: nodeapp
   type: NodePort
   ports:
-  - protocol: TCP
-    port: 5000
-    targetPort: 3000
+  - port: 3000
+    protocol: TCP
     nodePort: 31110
