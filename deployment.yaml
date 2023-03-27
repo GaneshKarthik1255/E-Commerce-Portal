@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: nodeserver
-        image: ganeshkarthik/nodeapp:latest
+        image: ganeshkarthik/myapp:latest
         ports:
         - containerPort: 3000
