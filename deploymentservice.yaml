@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: nodeapp-deployment
   labels:
-    app: nodeapp
+    app: myapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nodeapp
+      app: myapp
   template:
     metadata:
       labels:
-        app: nodeapp 
+        app: myapp 
     spec:
       containers:
       - name: nodeserver
