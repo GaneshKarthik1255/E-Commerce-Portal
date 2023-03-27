@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodeapp-deployment
+  name: myapp
   labels:
-    app: myapp
+    app: nodeapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: myapp
+      app: nodeapp
   template:
     metadata:
       labels:
-        app: myapp
+        app: nodeapp
     spec:
       containers:
-      - name: nodeserver
+      - name: myapp
         image: ganeshkarthik/myapp:latest
         ports:
         - containerPort: 3000
@@ -26,10 +26,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nodeapp-service
+  name: myapp
 spec:
   selector:
-    app: myapp
+    app: nodeapp
   type: NodePort
   ports:
   - port: 3000
