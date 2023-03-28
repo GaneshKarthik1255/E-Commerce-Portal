@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodeapp
+  name: nodeapp-deployment
   labels:
     app: nodeapp
 spec:
@@ -12,11 +12,11 @@ spec:
   template:
     metadata:
       labels:
-        app: nodeapp
+        app: nodeapp 
     spec:
       containers:
-      - name: nodeapp
-        image: ganeshkarthik/myapp:latest
+      - name: nodeserver
+        image: dakshaka/nodeapp:latest
         ports:
         - containerPort: 3000
         
@@ -26,12 +26,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nodeapp
+  name: nodeapp-service
 spec:
   selector:
-    app: nodeapp
+    app: nodeapp 
   type: NodePort
   ports:
-  - port: 3000
-    protocol: TCP
-    nodePort: 31111
+  - protocol: TCP
+    port: 5000
+    targetPort: 3000
+    nodePort: 31110
