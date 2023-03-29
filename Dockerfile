@@ -9,4 +9,4 @@ COPY . .
 
 EXPOSE 31110
 
-CMD ["python", "manage.py"]
+CMD ["python", "app.py"]
